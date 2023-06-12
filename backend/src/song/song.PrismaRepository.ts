@@ -48,7 +48,7 @@ export class PrismaSongRepository implements SongRepository {
   }
 
   async createSong(song: SongDto): Promise<Song> {
-    const { name, genre, duration_in_sec, times_played } = song;
+    const { name, genre, times_played, duration_in_sec } = song;
     console.log(song);
 
     const createdSong = await this.prisma.song.create({

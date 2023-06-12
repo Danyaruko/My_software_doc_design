@@ -80,7 +80,7 @@ export class PrismaSingerRepository implements SingerRepository {
     const savedSinger = await this.prisma.singer.update({
       where: { id: existingSinger.id },
       data: { name: Singer.name },
-      include: { songs: true},
+      include: { songs: true },
     });
     return savedSinger;
   }
