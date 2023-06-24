@@ -51,13 +51,13 @@ export class PrismaPlaylistRepository implements PlaylistRepository {
     const { name, times_played, owner_id } = Playlist;
     console.log(Playlist);
 
-    const owner_idExists = await this.prisma.user.findUnique({
-      where: { id: owner_id },
-    });
+    // const owner_idExists = await this.prisma.user.findUnique({
+    //   where: { id: owner_id },
+    // });
 
-    if (!owner_idExists) {
-      throw new Error(`User with id ${owner_id} not found`);
-    }
+    // if (!owner_idExists) {
+    //   throw new Error(`User with id ${owner_id} not found`);
+    // }
 
     const createdPlaylist = await this.prisma.playlist.create({
       data: {
